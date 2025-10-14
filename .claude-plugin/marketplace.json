@@ -1,0 +1,14 @@
+{
+    "name": "igor-gorohovsky-marketplace",
+    "description": "My own set of reusable claude code's utils",
+    "owner": {
+        "name": "igor-gorohovsky"
+    },
+    "plugins": [
+        {
+            "name": "documentation-researcher",
+            "source": "./plugins/documentation-researcher",
+            "description": "Separate agent for documentation research using context7 to reduce tokens usage"
+        }
+    ]
+}

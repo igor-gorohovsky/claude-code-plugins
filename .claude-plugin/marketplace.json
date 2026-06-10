@@ -9,6 +9,16 @@
             "name": "documentation-researcher",
             "source": "./plugins/documentation-researcher",
             "description": "Separate agent for documentation research using context7 to reduce tokens usage"
+        },
+        {
+            "name": "work-process",
+            "source": "./plugins/work-process",
+            "description": "Structured workflow skill: triage, plan, implement, verify, PR, and review"
+        },
+        {
+            "name": "git",
+            "source": "./plugins/git",
+            "description": "Git workflow skill: commit conventions, branching, stacked PRs with git-spice"
         }
     ]
 }

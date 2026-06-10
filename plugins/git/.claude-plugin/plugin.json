@@ -1,0 +1,10 @@
+{
+  "name": "git",
+  "description": "Git workflow skill: commit conventions, branching, stacked PRs with git-spice.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Igor Gorohovsky",
+    "email": "igor.gorohhovsy@yandex.ru"
+  },
+  "skills": "./skills/"
+}

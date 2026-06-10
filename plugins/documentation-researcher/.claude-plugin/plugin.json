@@ -1,9 +1,0 @@
-{
-  "name": "documentation-researcher",
-  "description": "Separate agent for documentation research using context7 to reduce tokens usage.",
-  "version": "1.0.0",
-  "author": {
-    "name": "Igor Gorohovsky",
-    "email": "igor.gorohhovsy@yandex.ru"
-  }
-}

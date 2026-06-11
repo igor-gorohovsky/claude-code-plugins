@@ -34,7 +34,7 @@ Branch name starts with the ticket number (e.g. `ag-51-...`), kebab-case. Ask th
 
 ### Stacked branches (git-spice)
 
-Propose a stack — never start one silently — when the task decomposes into independently-mergeable layers (e.g. DB schema → backend API → frontend). A diff above ~500 non-generated lines is a secondary signal, not the trigger.
+Propose a stack — never start one silently — when the task decomposes into independently-deliverable **vertical slices**: each slice cuts through all layers (data model → API → UI) to deliver one complete capability. Classic CRUD split: read slice first (model + list/get + list view), then create, then edit/delete — each slice is demoable and reviewable end-to-end. Don't slice by layer (schema PR, then API PR, then FE PR); a layer-only branch is justified only when that layer itself carries the risk (e.g. a hairy migration). A diff above ~500 non-generated lines is a secondary signal, not the trigger.
 
 Use the `gs` CLI for all stack operations; see [references/git-spice.md](references/git-spice.md). Don't mix raw `git rebase` into a tracked stack — it desyncs spice metadata.
 

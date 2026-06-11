@@ -12,12 +12,12 @@ This skill provides guidance to make work with me more productive.
 Size the task before anything else:
 
 - **Trivial** (typo, config tweak, obvious one-liner): just do it and commit. Skip the rest of this process.
-- **Small** (clear approach, single layer, roughly < half a day): post a short inline plan — a few sentences, not `grill-me` — and proceed immediately without waiting for sign-off; the user will interrupt if it's wrong. Then continue from Step 2.
-- **Large** (ambiguous, multi-layer, or stack-worthy per the `git` skill): full pipeline below.
+- **Small** (clear approach, single slice, roughly < half a day): post a short inline plan — a few sentences, not `grill-me` — and proceed immediately without waiting for sign-off; the user will interrupt if it's wrong. Then continue from Step 2.
+- **Large** (ambiguous, multi-slice, or stack-worthy per the `git` skill): full pipeline below.
 
 # Step 1 — Explore, then Plan & Discuss
 
-Explore the affected code *before* the discussion — come with findings and a draft approach, not open questions the codebase can answer.
+Explore the affected code _before_ the discussion — come with findings and a draft approach, not open questions the codebase can answer.
 
 Then discuss the plan using the `grill-me` skill.
 Do not use AskUserQuestion with the `grill-me` skill.
@@ -40,7 +40,7 @@ Open a draft PR per the `git` skill.
 
 # Step 4 — Code Review
 
-Run `/code-review` at **max** effort with `--comment` so findings land on the PR. Apply the fixes as `fixup!` commits and leave them visible — the user reviews the fixes and gives feedback.
+Run `/code-review` at **max** effort with `--comment` and `--fix` so findings land on the PR. Apply the fixes as `fixup!` commits and leave them withut autosquash. When you will fix findings reply to the leaved comment with link to commit and resolve the thread.
 
 # Step 5 — Reflect
 

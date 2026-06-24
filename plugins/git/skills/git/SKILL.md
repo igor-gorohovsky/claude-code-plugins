@@ -48,6 +48,7 @@ Description structure:
 
 1. `Ticket: <notion-url>` — when a ticket exists; ask for the URL if it wasn't given.
 2. **Goal**
-3. **Tradeoffs/Decisions**
+3. **Changes** — a concise description of what was changed.
 4. **How to review** — suggested commit-by-commit reading order and where the risk concentrates. Only for PRs with more than 3 commits.
-5. **Screenshots** — only when the PR contains frontend work.
+5. **Notes** — optional; anything else worth mentioning (tradeoffs, follow-ups, gotchas). Omit when there's nothing to add.
+6. **Screenshots** — only when the PR contains frontend work.

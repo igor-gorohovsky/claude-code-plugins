@@ -25,7 +25,7 @@ Do not use AskUserQuestion with the `grill-me` skill.
 # Step 2 — Implementation
 
 Implement the discussed plan.
-Use `tdd` for new behavior. Skipping is fine for pure refactors covered by existing tests, config changes, and UI polish — but say explicitly that you're skipping and why.
+Use `tdd` skill for new behavior. Skipping is fine for pure refactors covered by existing tests, config changes, and UI polish — but say explicitly that you're skipping and why.
 Follow the `git` skill for branches and commits.
 
 # Step 3 — Verify & Open PR

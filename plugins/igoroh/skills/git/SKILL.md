@@ -48,7 +48,7 @@ Description structure:
 
 1. `Ticket: <notion-url>` — when a ticket exists; ask for the URL if it wasn't given.
 2. **Goal**
-3. **Changes** — a concise description of what was changed.
+3. **Changes** — describe the *direction* of the change so a reviewer grasps it fast: what now works differently and why. Stay high-altitude — don't narrate file-by-file or name individual functions/variables/classes; the diff already shows that. A few bullets, not a changelog.
 4. **Notes** — optional; anything else worth mentioning (tradeoffs, follow-ups, gotchas). Omit when there's nothing to add.
 5. **How to review** — suggested commit-by-commit reading order and where the risk concentrates. Only for PRs with more than 3 commits.
 6. **Screenshots** — only when the PR contains frontend work. See [Screenshots](#screenshots).

@@ -51,4 +51,28 @@ Description structure:
 3. **Changes** — a concise description of what was changed.
 4. **Notes** — optional; anything else worth mentioning (tradeoffs, follow-ups, gotchas). Omit when there's nothing to add.
 5. **How to review** — suggested commit-by-commit reading order and where the risk concentrates. Only for PRs with more than 3 commits.
-6. **Screenshots** — only when the PR contains frontend work.
+6. **Screenshots** — only when the PR contains frontend work. See [Screenshots](#screenshots).
+
+## Screenshots
+
+GitHub has no API for attaching images, so upload screenshots to Cloudflare R2 and embed the public links in the PR description.
+
+Upload each image with the `wrangler` CLI (run as `bunx wrangler`; an authenticated session is assumed):
+
+```
+bunx wrangler r2 object put "github-screenshots/<key>" --file=<path> --content-type=image/png --remote
+```
+
+- Bucket: `github-screenshots`. Public base URL: `https://pub-07cc2e1863834d319b66aa5802c66ea3.r2.dev/<key>`.
+- `--remote` is required — without it wrangler writes to the local simulator, not R2.
+- The key **must** include a random component so the public URL isn't guessable (the bucket is world-readable with no listing, so an unguessable key is the only thing protecting the image). Use e.g. `<branch>/<random-hex>.png` — generate the suffix with `openssl rand -hex 4`.
+
+Always present screenshots in a markdown table, never as bare images:
+
+```
+| Before | After |
+| --- | --- |
+| ![before](https://pub-07cc2e1863834d319b66aa5802c66ea3.r2.dev/ag-51-a1b2c3d4.png) | ![after](https://pub-07cc2e1863834d319b66aa5802c66ea3.r2.dev/ag-51-e5f6a7b8.png) |
+```
+
+Pick table columns that fit the change (Before/After, one column per screen, etc.). After uploading, fetch each URL once to confirm it returns `200` before relying on it in the description.

@@ -15,16 +15,19 @@ Commit care exists for the review, not for main's history — PRs are squash-mer
 Split a task into self-describing commits to enable an easy review process through commit history.
 
 Splitting rules:
+
 - A mechanical refactor never shares a commit with a behavior change.
 - Tests land in the same commit as the code they test.
 
 Message conventions:
+
 - Imperative mood, sentence case, subject ≤72 chars (e.g. `Add Vite + React admin panel SPA`).
 - No conventional-commit prefixes (`feat:`, `fix:`).
 - No ticket number in the subject — it lives in the branch name.
-- Body only when the *why* isn't obvious from the diff.
+- Body only when the _why_ isn't obvious from the diff.
 
 History rewriting is two-phase:
+
 - **Before the first review**: rebase/reorder freely to keep commits clean.
 - **After review starts**: never rewrite published history — append `fixup!` commits instead. No autosquash is needed before user feedback.
 
@@ -48,10 +51,12 @@ Description structure:
 
 1. `Ticket: <notion-url>` — when a ticket exists; ask for the URL if it wasn't given.
 2. **Goal**
-3. **Changes** — describe the *direction* of the change so a reviewer grasps it fast: what now works differently and why. Stay high-altitude — don't narrate file-by-file or name individual functions/variables/classes; the diff already shows that. A few bullets, not a changelog.
+3. **Changes** — describe the _direction_ of the change so a reviewer grasps it fast: what now works differently and why. Stay high-altitude — don't narrate file-by-file or name individual functions/variables/classes; the diff already shows that. A few bullets, not a changelog.
 4. **Notes** — optional; anything else worth mentioning (tradeoffs, follow-ups, gotchas). Omit when there's nothing to add.
 5. **How to review** — suggested commit-by-commit reading order and where the risk concentrates. Only for PRs with more than 3 commits.
 6. **Screenshots** — only when the PR contains frontend work. See [Screenshots](#screenshots).
+
+Whenever you change existing PR make sure description is up to date. Update screenshots too if necessary.
 
 ## Screenshots
 

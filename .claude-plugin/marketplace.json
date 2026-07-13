@@ -8,7 +8,7 @@
         {
             "name": "igoroh",
             "source": "./plugins/igoroh",
-            "description": "Igor's workflow skills: git conventions and a structured work process"
+            "description": "Igor's workflow skills: git conventions"
         }
     ]
 }

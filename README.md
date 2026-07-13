@@ -6,7 +6,6 @@ Personal marketplace of reusable Claude Code plugins.
 
 - **igoroh** — Igor's workflow skills:
   - **git** — git workflow skill: commit conventions, branching, stacked PRs with git-spice
-  - **work-process** — structured workflow skill: triage, plan, implement, verify, PR, and review
 
 ## Install
 

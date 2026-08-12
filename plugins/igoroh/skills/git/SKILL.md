@@ -35,15 +35,26 @@ History rewriting is two-phase:
 
 Branch name starts with the ticket number (e.g. `ag-51-...`), kebab-case. Ask the user for the ticket number if not provided. If there is no ticket, use a reasonable kebab-case name.
 
-### Stacked branches (git-spice)
+### Stacked branches
 
 Propose a stack — never start one silently — when the task decomposes into independently-deliverable **vertical slices**: each slice cuts through all layers (data model → API → UI) to deliver one complete capability. Classic CRUD split: read slice first (model + list/get + list view), then create, then edit/delete — each slice is demoable and reviewable end-to-end. Don't slice by layer (schema PR, then API PR, then FE PR); a layer-only branch is justified only when that layer itself carries the risk (e.g. a hairy migration). A diff above ~500 non-generated lines is a secondary signal, not the trigger.
 
-Use the `gs` CLI for all stack operations; see [references/git-spice.md](references/git-spice.md). Don't mix raw `git rebase` into a tracked stack — it desyncs spice metadata.
+Create the stack **before** writing files — don't build everything on one branch and split it afterwards. One concern per layer, bottom to top, foundational work at the bottom.
+
+Use **GitHub native stacked PRs** via the `gh stack` CLI extension (`gh extension install github/gh-stack`). Prefer the official `gh-stack` skill when it is available — it is authoritative for mechanics. See [references/gh-stack.md](references/gh-stack.md) for the essentials and the agent-safety rules.
+
+Two things that bite hardest:
+
+- Bare `gh stack view`, `submit`, `checkout`, `switch`, and `modify` open a TUI and **block forever** when driven by an agent. Always pass the non-interactive form (`view --json`, `submit --auto`, explicit branch names).
+- Stacks are strictly linear — one parent, at most one child. Parallel work needs a separate stack, not a second child.
+
+Keep raw `git rebase` out of a tracked stack; use `gh stack rebase --upstack` so every layer above a change is replayed.
 
 ## PRs
 
 When you finish a task, open a **draft** PR. Specify the user as an assignee.
+
+For a stack, open every layer at once with `gh stack submit --auto` (drafts, bases chained), then rewrite each title and description with `gh pr edit` — the auto-generated ones don't follow the structure below.
 
 Title: imperative, same style as commit subjects, no ticket prefix. The PR is squash-merged, so the title becomes the commit on main — make it good.
 
